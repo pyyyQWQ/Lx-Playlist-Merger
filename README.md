@@ -13,20 +13,3 @@
 
 下载最新版本：[LXMC-Playlist-Merger.exe](https://github.com/pyyyQWQ/lxmc-playlist-merger/releases)
 
-## 使用方法
-
-1. 点击「File 1」选择第一个 .lxmc 歌单文件
-2. 点击「File 2」选择第二个 .lxmc 歌单文件
-3. 点击「Compare & Merge」分析歌单
-4. 点击「Download Merged Playlist」保存合并后的歌单
-
-## 从源码构建
-
-```bash
-pip install pyinstaller
-pyinstaller --onefile --windowed --name LXMC-Playlist-Merger --icon=lxmc_icon.ico lxmc_merger.py
-```
-
-## 开源协议
-
-MIT
