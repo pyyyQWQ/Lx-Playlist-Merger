@@ -12,7 +12,9 @@ import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 from pathlib import Path
 
-__version__ = "1.0.1"
+__version__ = "1.1.0"
+
+PROJECT_URL = "https://github.com/pyyyQWQ/lxmc-playlist-merger"
 
 # ─── Color Palette ───────────────────────────────────────────────────
 BG       = "#0f1117"
@@ -111,8 +113,17 @@ class App(tk.Tk):
             font=("Segoe UI", 18, "bold"),
             fg=ACCENT2, bg=BG, anchor="w")
         title.pack(side="left")
-        tk.Label(hdr, text="拖入两个歌单 → 对比 → 合并下载",
-            font=("Segoe UI", 10), fg=TEXT2, bg=BG, anchor="e").pack(side="right")
+        right_hdr = tk.Frame(hdr, bg=BG)
+        right_hdr.pack(side="right")
+        link_lbl = tk.Label(right_hdr,
+            text=f"🔗 {PROJECT_URL}",
+            font=("Segoe UI", 9), fg=BLUE, bg=BG, cursor="hand2")
+        link_lbl.pack(anchor="e")
+        link_lbl.bind("<Button-1>", lambda e: self._open_url(PROJECT_URL))
+        link_lbl.bind("<Enter>", lambda e: link_lbl.config(fg=ACCENT2, underline=True))
+        link_lbl.bind("<Leave>", lambda e: link_lbl.config(fg=BLUE, underline=False))
+        tk.Label(right_hdr, text="拖入两个歌单 → 对比 → 合并下载",
+            font=("Segoe UI", 10), fg=TEXT2, bg=BG, anchor="e").pack(anchor="e")
 
         # ── Error label ──
         self.err_lbl = tk.Label(main, text="", font=("Segoe UI", 10),
@@ -505,6 +516,10 @@ class App(tk.Tk):
     def _show_err(self, msg):
         self.err_lbl.config(text=msg)
         self.err_lbl.pack(fill="x", pady=(0, 8))
+
+    def _open_url(self, url):
+        import webbrowser
+        webbrowser.open(url)
 
     def _hide_err(self):
         self.err_lbl.pack_forget()
