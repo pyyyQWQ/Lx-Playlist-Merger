@@ -22,10 +22,10 @@ Download the latest release: [LXMC-Playlist-Merger.exe](https://github.com/pyyyQ
 
 ## Building from Source
 
-`ash
+```bash
 pip install pyinstaller
 pyinstaller --onefile --windowed --name LXMC-Playlist-Merger --icon=lxmc_icon.ico lxmc_merger.py
-`
+```
 
 ## License
 
