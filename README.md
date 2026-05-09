@@ -1,32 +1,32 @@
-# LXMC Playlist Merger
+# LXMC 歌单合并工具
 
-A desktop application for merging LXMC playlist files.
+一款用于合并 LXMC 歌单文件的桌面应用程序。
 
-## Features
+## 功能特点
 
-- Load and compare two .lxmc playlist files
-- Automatically identify common songs and unique songs in each file
-- Merge playlists with one click
-- Dark theme interface
+- 同时加载两个 .lxmc 歌单文件
+- 自动识别两首歌单中的共同曲目和各独有的曲目
+- 一键合并歌单
+- 深色主题界面
 
-## Download
+## 下载使用
 
-Download the latest release: [LXMC-Playlist-Merger.exe](https://github.com/pyyyQWQ/lxmc-playlist-merger/releases)
+下载最新版本：[LXMC-Playlist-Merger.exe](https://github.com/pyyyQWQ/lxmc-playlist-merger/releases)
 
-## Usage
+## 使用方法
 
-1. Click "File 1" to select your first .lxmc playlist file
-2. Click "File 2" to select your second .lxmc playlist file
-3. Click "Compare & Merge" to analyze the playlists
-4. Click "Download Merged Playlist" to save the result
+1. 点击「File 1」选择第一个 .lxmc 歌单文件
+2. 点击「File 2」选择第二个 .lxmc 歌单文件
+3. 点击「Compare & Merge」分析歌单
+4. 点击「Download Merged Playlist」保存合并后的歌单
 
-## Building from Source
+## 从源码构建
 
 ```bash
 pip install pyinstaller
 pyinstaller --onefile --windowed --name LXMC-Playlist-Merger --icon=lxmc_icon.ico lxmc_merger.py
 ```
 
-## License
+## 开源协议
 
 MIT
